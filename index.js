@@ -1,6 +1,10 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const fetch = require('node-fetch');
+const bodyParser = require("body-parser")
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
@@ -12,7 +16,6 @@ app.use(function(req, res, next) {
 
 app.post('/', async (req, res) => {
   try {
-    const fetch = require('node-fetch');
     const data = [{ email: req.body.email }];
     const options = {
         method: 'POST',
