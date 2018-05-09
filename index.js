@@ -26,4 +26,8 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.listen(80, () => console.log('express started on port 80!'))
+app.get('/favicon.ico', (req, res) =>res.sendStatus(204));
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`express started on port ${port}!`))
