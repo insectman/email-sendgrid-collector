@@ -2,10 +2,10 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
-app.get('/', async (req, res) => {
+app.post('/', async (req, res) => {
   try {
     const fetch = require('node-fetch');
-    const data = [{ email: "svsvsrv@ssrvsrbsdb.com" }];
+    const data = [{ email: req.body }];
     const options = {
         method: 'POST',
         headers: {
