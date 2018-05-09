@@ -5,7 +5,7 @@ const app = express()
 app.post('/', async (req, res) => {
   try {
     const fetch = require('node-fetch');
-    const data = [{ email: req.body }];
+    const data = [{ email: req.body.email }];
     const options = {
         method: 'POST',
         headers: {
